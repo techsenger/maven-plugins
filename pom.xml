@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.techsenger.maven.root</groupId>
+        <artifactId>maven-root</artifactId>
+        <version>1.6.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.techsenger.maven.plugins</groupId>
+    <artifactId>maven-plugins</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Maven Plugins</name>
+    <description>Maven Plugins Collection</description>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <url>https://github.com/techsenger/maven-plugins</url>
+
+    <scm>
+        <connection>scm:git:https://github.com/techsenger/maven-plugins.git</connection>
+        <developerConnection>scm:git:https://github.com/techsenger/maven-plugins.git</developerConnection>
+        <url>https://github.com/techsenger/maven-plugins</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/techsenger/maven-plugins/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>pcastornii</id>
+            <name>Pavel Castornii</name>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>repsy-snapshots</id>
+            <url>https://repo.repsy.io/mvn/techsenger/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <modules>
+        <module>bom-properties-maven-plugin</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.techsenger.osp-bom</groupId>
+                <artifactId>osp-bom</artifactId>
+                <version>1.7.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+
+
