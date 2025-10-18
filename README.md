@@ -1,7 +1,8 @@
 # Techsenger Maven Plugins
 
+A collection of useful Maven plugins.
+
 ## Table of Contents
-* [Overview](#overview)
 * [Usage](#usage)
     * [bom-properties](#usage-bom-properties)
 * [Requirements](#requirements)
@@ -9,10 +10,6 @@
 * [License](#license)
 * [Contributing](#contributing)
 * [Support Us](#support-us)
-
-## Overview <a name="overview"></a>
-
-A collection of useful maven plugins.
 
 ## Usage <a name="usage"></a>
 
