@@ -148,6 +148,17 @@ public class CopyPropertiesMojo extends AbstractMojo {
         );
         ArtifactRequest request = new ArtifactRequest();
         request.setArtifact(bomArtifact);
+
+        // An ArtifactRequest without repositories makes the resolver work only against the local repository.
+        // The enhanced local repository tracks the remote repository IDs associated with downloaded artifacts in
+        // _remote.repositories. An artifact downloaded from a remote repository may be considered unavailable if
+        // none of the repositories in the current resolution request matches its recorded origin. Artifacts installed
+        // locally are exempt from this origin check.
+        //
+        // Therefore, resolving a BOM with an empty repository list may fail if the BOM was previously downloaded
+        // from a remote repository and is not considered available locally. Use the project's effective remote
+        // repositories so that resolution can use the repositories configured for the project.
+        request.setRepositories(project.getRemoteProjectRepositories());
         ArtifactResult result = repositorySystem.resolveArtifact(
             session.getRepositorySession(),
             request
